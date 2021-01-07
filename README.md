@@ -26,7 +26,7 @@ for Laravel, after installation complete add provider to config/app.php
     */
 ```
 
-Seller authorization
+Seller Authorization
 -----
 > you need seller authorization. can be seen in [Seller authorization introduction](https://open.lazada.com/doc/doc.htm?spm=a2o9m.11193531.0.0.1d796bbeGt9UoA#?nodeId=10777&docId=108260)
 
