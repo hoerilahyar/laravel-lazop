@@ -14,16 +14,14 @@ Run the following command:
 composer require hoeril/lazop
 ```
 
-Usage
+Seller authorization
 -----
-you need seller authorization.
-
-[Seller authorization introduction](https://open.lazada.com/doc/doc.htm?spm=a2o9m.11193531.0.0.1d796bbeGt9UoA#?nodeId=10777&docId=108260)
+> you need seller authorization. can be seen in [Seller authorization introduction](https://open.lazada.com/doc/doc.htm?spm=a2o9m.11193531.0.0.1d796bbeGt9UoA#?nodeId=10777&docId=108260)
 
 1. Concatenate authorization URL<br/>
 Sample link for authorization:<br/>
 
-https://auth.lazada.com/oauth/authorize?response_type=code&force_auth=true&redirect_uri=${app call back url}&client_id=${appkey}<br/>
+https://auth.lazada.com/oauth/authorize?response_type=code&force_auth=true&redirect_uri=${app_call_back_url}&client_id=${appkey}<br/>
 
 2. Guide sellers to authorize<br/>
 following window with the login panel is displayed.
@@ -81,8 +79,13 @@ The access token will expire in a specific period (expires_in). Before it expire
     ]
 }
 ```
+<h3><b>Usage notes</b></h3>
+* Sellers do not need to authorize again before the token expires.
+* If “refresh_expires_in” = 0, the access token cannot be refreshed. Only when “refresh_expires_in” > 0, you can call the /auth/token/refresh API to refresh the access token.
+* If token needs to be refreshed, it is recommended to refresh it 30 minutes before the token expires.
 
 Sample usage:
+-----
 ```php
 use Hoeril\Lazop\LazopClient;
 use Hoeril\Lazop\LazopRequest;
@@ -105,3 +108,4 @@ var_dump($c->execute($request));
 ...
 
 ```
+
