@@ -1,0 +1,17 @@
+{
+    "name": "hoeril/lazop",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hoeril",
+            "email": "hoeril.ahyar@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hoeril\\Lazop\\": "src/"
+        }
+    }
+}
